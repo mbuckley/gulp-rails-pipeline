@@ -1,3 +1,1 @@
-message = require './message'
-
-console.log message
+require './buttonHandler'
