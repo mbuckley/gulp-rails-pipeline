@@ -7,7 +7,7 @@ gulp.task('build', function(cb) {
   if(process.env.RAILS_ENV === 'production') {
     tasks.push('rev');
   }
-  
+
   tasks.push(cb);
   gulpSequence.apply(this, tasks);
 });

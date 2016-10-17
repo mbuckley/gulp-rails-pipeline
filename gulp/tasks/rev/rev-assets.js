@@ -1,12 +1,14 @@
 var config       = require('../../config');
 var gulp         = require('gulp');
-var rev          = require('gulp-rev');
+var debug        = require('gulp-debug');
+var RevAll = require('gulp-rev-all');
 
 // Add md5 hashes to assets
-gulp.task('rev-assets', function(){
-  return gulp.src(config.publicAssets + '/**/**.!(css|js|eot|woff|ttf)')
-    .pipe(rev())
+gulp.task('rev-assets', function() {
+  return gulp.src(config.publicAssetsGlob)
+    // .pipe(debug({title: 'publicAssetsGlob:'}))
+    .pipe(RevAll.revision())
     .pipe(gulp.dest(config.publicAssets))
-    .pipe(rev.manifest())
+    .pipe(RevAll.manifestFile())
     .pipe(gulp.dest(config.publicAssets));
 });

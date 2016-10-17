@@ -1,11 +1,15 @@
 var publicAssets = "./public/assets";
-var sourceFiles  = "./gulp/assets";
+var sourceFiles  = "./client";
 
 module.exports = {
   publicAssets: publicAssets,
+  publicAssetsGlob: publicAssets + "/**/*(*.css|*.js|*.png|*.eot|*.woff|*.ttf)",
   browserSync: {
     proxy: 'localhost:3000',
-    files: ['./app/views/**']
+    files: ['./app/views/**'],
+    ui: {
+      port: 3001
+    }
   },
   sass: {
     src: sourceFiles + "/stylesheets/**/*.{sass,scss}",

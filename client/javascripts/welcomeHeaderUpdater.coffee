@@ -2,5 +2,4 @@
 message = require './message'
 
 $ ->
-  $('.test-button').click ->
-    alert message
+  $('#welcome').text message
