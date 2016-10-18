@@ -41,12 +41,4 @@ module.exports = {
   javascripts: {
     src: sourceAssets + "/javascripts/**/*.{coffee,js}"
   }
-  // browserify: {
-  //   bundleConfigs: [{
-  //     entries: sourceAssets + '/javascripts/global.coffee',
-  //     dest: publicAssets + '/javascripts',
-  //     outputName: 'global.js',
-  //     extensions: ['.js','.coffee']
-  //   }]
-  // }
 };

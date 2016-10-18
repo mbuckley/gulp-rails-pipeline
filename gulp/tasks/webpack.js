@@ -9,14 +9,15 @@ var webpackConfig = require('../../webpack.config.js');
 gulp.task("webpack:build-prod", function(callback) {
 	// add production config settings
 	var myConfig = Object.create(webpackConfig);
+
 	myConfig.plugins = myConfig.plugins.concat(
 		new webpack.DefinePlugin({
 			"process.env": {
 				"NODE_ENV": JSON.stringify("production")
 			}
 		}),
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.UglifyJsPlugin()
+		new webpack.optimize.DedupePlugin()
+		// new webpack.optimize.UglifyJsPlugin()
 	);
 
 	// run webpack
@@ -46,6 +47,8 @@ gulp.task("webpack:build-dev", function(callback) {
 	});
 });
 
+// Before changing this task, see
+// https://www.browsersync.io/docs/gulp#gulp-reload
 gulp.task('webpack:build-dev:bs', ['webpack:build-dev'], function(done) {
 	browserSync.reload();
 	done();

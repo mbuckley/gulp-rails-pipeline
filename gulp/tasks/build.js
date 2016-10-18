@@ -6,7 +6,7 @@ gulp.task('build', function(cb) {
 
   if(process.env.NODE_ENV === 'production') {
     tasks.push('webpack:build-prod');
-    tasks.push('rev');
+    // tasks.push('rev');
   } else {
     tasks.push('webpack:build-dev');
   }
