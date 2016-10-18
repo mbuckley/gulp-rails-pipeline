@@ -1,0 +1,12 @@
+@import "./base/settings";
+
+body {
+  font-size: $base-font-size;
+  font-family: $font-stack;
+  color: $primary-color;
+}
+
+p {
+  color: pink;
+  font-size: 44px;
+}

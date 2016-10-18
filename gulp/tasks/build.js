@@ -2,7 +2,8 @@
 var gulpSequence = require('gulp-sequence')
 
 gulp.task('build', function(cb) {
-  var tasks = ['clean', ['iconFont', 'images'], 'sass'];
+  // var tasks = ['clean', ['iconFont', 'images'], 'sass'];
+  var tasks = ['clean', 'images'];
 
   if(process.env.NODE_ENV === 'production') {
     tasks.push('webpack:build-prod');

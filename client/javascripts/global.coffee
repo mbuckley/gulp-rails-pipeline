@@ -1,3 +1,5 @@
+require "../stylesheets/global.scss"
+
 angular = require "angular"
 require "./welcomeHeaderUpdater"
 

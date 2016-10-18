@@ -23,21 +23,6 @@ module.exports = {
     src: sourceAssets + "/images/**",
     dest: publicAssets + "/images"
   },
-  iconFont: {
-    name: 'Gulp Rails Icons',
-    src: sourceAssets + "/icons/*.svg",
-    dest: publicAssets + '/fonts',
-    sassDest: sourceAssets + '/stylesheets/base',
-    template: './gulp/tasks/iconFont/template.sass',
-    sassOutputName: '_iconFont.sass',
-    fontPath: '/assets/fonts',
-    className: 'icon',
-    options: {
-      fontName: 'gulp-rails-icons',
-      appendCodepoints: true,
-      normalize: false
-    }
-  },
   javascripts: {
     src: sourceAssets + "/javascripts/**/*.{coffee,js}"
   }
