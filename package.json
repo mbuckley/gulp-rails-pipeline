@@ -55,7 +55,8 @@
   "scripts": {
     "postinstall": "gulp build",
     "build": "gulp build",
-    "build:dist": "RAILS_ENV=production gulp build"
+    "build:dist": "NODE_ENV=production gulp build",
+    "watch": "gulp"
   },
   "devDependencies": {
     "gulp-rev-all": "^0.9.7"

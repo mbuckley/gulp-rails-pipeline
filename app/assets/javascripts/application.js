@@ -8,6 +8,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //
-// Pull compiled from /public/assets/javascripts
+// Pull new fe compiled from /public/assets/javascripts
 //= require vendor
 //= require global

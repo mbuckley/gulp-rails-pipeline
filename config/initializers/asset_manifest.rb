@@ -1,7 +1,7 @@
 class AssetManifest
   def self.manifest
-    if File.exists?("rev-manifest.json")
-      @manifest ||= JSON.parse(File.read("rev-manifest.json"))
+    if File.exists?("public/assets/rev-manifest.json")
+      @manifest ||= JSON.parse(File.read("public/assets/rev-manifest.json"))
     end
   end
 

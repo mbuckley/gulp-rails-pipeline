@@ -1,3 +1,4 @@
+include ActionView::Helpers::AssetTagHelper
 module ApplicationHelper
 
   def stylesheet_link_tag(url, options={})
@@ -6,10 +7,8 @@ module ApplicationHelper
     super(url, options)
   end
 
-  def crossorigin_javascript_include_tag(url, options={})
-    url = AssetManifest.javascript_path(url)
-
-    super(url, options)
+  def fe_javascript_src(url, options={})
+    "/assets/#{AssetManifest.javascript_path(url)}"
   end
 
   def image_tag(url, options={})

@@ -6,22 +6,18 @@ var webpack       = require('webpack');
 var webpackConfig = require('../../webpack.config.js');
 
 // Production Specific
-gulp.task("build", ["webpack:build"]);
-
-gulp.task("webpack:build", function(callback) {
-	// modify some webpack config options
+gulp.task("webpack:build-prod", function(callback) {
+	// add production config settings
 	var myConfig = Object.create(webpackConfig);
-	// dedupe, uglify options can be added here..
-	// myConfig.plugins = myConfig.plugins.concat(
-	// 	new webpack.DefinePlugin({
-	// 		"process.env": {
-	// 			// This has effect on the react lib size
-	// 			"NODE_ENV": JSON.stringify("production")
-	// 		}
-	// 	}),
-	// 	new webpack.optimize.DedupePlugin(),
-	// 	new webpack.optimize.UglifyJsPlugin()
-	// );
+	myConfig.plugins = myConfig.plugins.concat(
+		new webpack.DefinePlugin({
+			"process.env": {
+				"NODE_ENV": JSON.stringify("production")
+			}
+		}),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.UglifyJsPlugin()
+	);
 
 	// run webpack
 	webpack(myConfig, function(err, stats) {
@@ -54,7 +50,3 @@ gulp.task('webpack:build-dev:bs', ['webpack:build-dev'], function(done) {
 	browserSync.reload();
 	done();
 });
-
-// gulp.task('webpack', webpackTask);
-//FIXME: This needs to support dev vs prod builds coming from build.js task
-gulp.task("webpack", ["webpack:build-dev"]);
